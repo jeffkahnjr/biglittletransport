@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jeff Kahn - Insight Data Science</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/components.css" rel="stylesheet">
+
+    <link href="../static/css/bootstrap0.min.css" rel="stylesheet">
+    <link href="../static/css/core.css" rel="stylesheet">
+    <link href="../static/css/icons.css" rel="stylesheet">
+    <link href="../static/css/menu_light.css" rel="stylesheet">
+    <link href="../static/css/pages.css" rel="stylesheet">
+    <link href="../static/css/responsive.css" rel="stylesheet">
+    <link href="../static/css/variables.css" rel="stylesheet">
+    <link href="../static/css/menu.css" rel="stylesheet">
+
+    <link href="../static/assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/pages.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/menu.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/responsive.css" rel="stylesheet" type="text/css">
+
+    <link href="../plugins/switchery/switchery.min.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="../static/assets/js/modernizr.min.js"></script>
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+        width: 100%;
+        align-items:center;
+        display:block;
+        padding: inherit;
+      }
+
+      #map2 {
+        height: 100%;
+        width: 100%;
+        align-items:center;
+        display:block;
+        padding: inherit;
+      }
+
+      #map3 {
+        height: 100%;
+        width: 100%;
+        align-items:center;
+        display:block;
+        padding: inherit;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .col-lg-4 {
+        padding-right: 20%;
+        padding-left: 20%;
+      }
+
+      grey{
+        color:slategray;
+      }
+
+      blue{
+        color:dodgerblue;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+  <!--TITLE AND NAV-->
+  <section>
+    <!--NAV TABS-->
+    <ul class="nav nav-tabs">
+	    <li class = "active"><a data-toggle="tab" href=""><grey>.</grey><blue>blt</blue><grey>.</grey></a></li>
+      <li><a data-toggle="tab" href="details">ABOUT <grey>.</grey><blue>blt</blue><grey>.</grey></a></li>
+      <li><a data-toggle="tab" href="/slides">SLIDES</a></li>
+      <li><a data-toggle="tab" href="aboutme">ABOUT JEFF</a></li>
+    </ul>
+    <!--END NAV TABS-->
+
+    <!--TITLE PANEL-->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1><center><grey>.</grey><blue>big little transport</blue><grey>.</grey><br>
+          <h4>a smart shuttle dispatcher</h4></center></h1>
+      </div>
+    </div>
+    <!--END TITLE PANEL-->
+  </section>
+  <!--END TITLE AND NAV-->
+
+  <!--BLURB AND INPUT-->
+  <section>
+    <!--BLURB-->
+    <div class="col-lg-4"style="width:100%">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dispatch ride-sharing shuttles in NYC</h3>
+                <p class="panel-sub-title font-13 text-muted">Identifying efficient pickup/dropoff pairs for shuttling ride-share passengers.</p>
+            </div>
+            <div class="panel-body">
+              <p>
+                <grey>.</grey><blue>big little transport</blue><grey>.</grey>
+                  helps ride sharing companies dispatch point to point shuttles to
+                  the areas of highest demand.  It specifically looks for shuttle routes
+                  that have tight clustering of both pickup and dropoff location. This
+                  allows the dispatcher to pool together more riders and save on operating costs.
+              </p>
+            </div>
+        </div>
+    </div>
+    <!--END BLURB-->
+
+    <!--INPUT PANEL-->
+    <div class="col-lg-4" style="width:100%">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Enter Pickup Details</h3>
+                <p class="panel-sub-title font-13 text-muted">Enter the pickup time and the day of the week.</p>
+            </div>
+            <div class="panel-body">
+              <form action="/output2" method="GET">
+                <!--PICKUP TIME-->
+                <div class="form-group"style="width:25%">
+                  <label for="start_time">Select Hour:</label>
+                  <select class="form-control" id="start_time" name = 'start_time'>
+                    <option value='00:00:00'>12:00AM</option>
+                    <option value='01:00:00'>1:00AM</option>
+                    <option value='02:00:00'>2:00AM</option>
+                    <option value='03:00:00'>3:00AM</option>
+                    <option value='04:00:00'>4:00AM</option>
+                    <option value='05:00:00'>5:00AM</option>
+                    <option value='06:00:00'>6:00AM</option>
+                    <option value='07:00:00'>7:00AM</option>
+                    <option value='08:00:00'>8:00AM</option>
+                    <option value='09:00:00'>9:00AM</option>
+                    <option value='10:00:00'>10:00AM</option>
+                    <option value='11:00:00'>11:00AM</option>
+                    <option value='12:00:00'>12:00PM</option>
+                    <option value='13:00:00'>1:00PM</option>
+                    <option value='14:00:00'>2:00PM</option>
+                    <option value='15:00:00'>3:00PM</option>
+                    <option value='16:00:00'>4:00PM</option>
+                    <option value='17:00:00'>5:00PM</option>
+                    <option value='18:00:00'>6:00PM</option>
+                    <option value='19:00:00'>7:00PM</option>
+                    <option value='20:00:00'>8:00PM</option>
+                    <option value='21:00:00'>9:00PM</option>
+                    <option value='22:00:00'>10:00PM</option>
+                    <option value='23:00:00'>11:00PM</option>
+                  </select>
+                </div>
+                <!--END PICKUP TIME-->
+                <!--WEEKDAY-->
+                <div class="form-group"style="width:25%">
+                  <label for="weekday">Select Day:</label>
+                  <select class="form-control" id="weekday" name="weekday">
+                    <option value=0>Sunday</option>
+                    <option value=1>Monday</option>
+                    <option value=2 selected>Tuesday</option>
+                    <option value=3>Wednesday</option>
+                    <option value=4>Thursday</option>
+                    <option value=5>Friday</option>
+                    <option value=6>Saturday</option>
+                  </select>
+                </div>
+                <!--END WEEKDAY-->
+                <div>
+                  <button type="submit" class="btn btn-default btn-lg">Dispatch!</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+    <!--END INPUT PANEL-->
+  </section>
+  <!--END BLURB AND INPUT-->
+
+
+
+    <script>
+      var map, heatmap, heatmap_dropoff;
+      var ny ={lat: 40.7831,lng: -73.9712};
+      var zoom_level = 11;
+      var styles = [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: zoom_level,
+          center: ny,
+          mapTypeId: 'roadmap'
+        });
+
+
+        map.set('styles', styles);
+
+        map2 = new google.maps.Map(document.getElementById('map2'), {
+          zoom: zoom_level,
+          center: ny,
+          mapTypeId: 'roadmap'
+        });
+        map2.set('styles', styles);
+
+        map3 = new google.maps.Map(document.getElementById('map3'), {
+          zoom: zoom_level,
+          center: ny,
+          mapTypeId: 'roadmap'
+        });
+        map3.set('styles', styles);
+
+        marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: ny
+        });
+        marker.addListener('click', toggleBounce);
+
+      }
+
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPmpvI8JXVxgz99HXIcssM6c2oioACfQk&libraries=visualization&callback=initMap">
+    </script>
+
+  </body>
+</html>

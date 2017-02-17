@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jeff Kahn - Insight Data Science</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/components.css" rel="stylesheet">
+
+    <link href="../static/css/bootstrap0.min.css" rel="stylesheet">
+    <link href="../static/css/core.css" rel="stylesheet">
+    <link href="../static/css/icons.css" rel="stylesheet">
+    <link href="../static/css/menu_light.css" rel="stylesheet">
+    <link href="../static/css/pages.css" rel="stylesheet">
+    <link href="../static/css/responsive.css" rel="stylesheet">
+    <link href="../static/css/variables.css" rel="stylesheet">
+    <link href="../static/css/menu.css" rel="stylesheet">
+
+    <link href="../static/assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/pages.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/menu.css" rel="stylesheet" type="text/css">
+    <link href="../static/assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="../static/assets/js/modernizr.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+       #map {
+         height: 100%;
+         width: 100%;
+         align-items:center;
+         display:block;
+         padding: inherit;
+       }
+
+       #map2 {
+         height: 100%;
+         width: 100%;
+         align-items:center;
+         display:block;
+         padding: inherit;
+       }
+
+       #map3 {
+         height: 100%;
+         width: 100%;
+         align-items:center;
+         display:block;
+         padding: inherit;
+       }
+
+       #map4 {
+         height: 100%;
+         width: 100%;
+         align-items:center;
+         display:block;
+         padding: inherit;
+       }
+       #map5 {
+         height: 100%;
+         width: 100%;
+         align-items:center;
+         display:block;
+         padding: inherit;
+       }
+
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+      .col-lg-4 {
+        padding-right: 20%;
+        padding-left: 20%;
+      }
+
+      grey{
+        color:slategray;
+      }
+
+      blue{
+        color:dodgerblue;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <!--TITLE AND NAV-->
+    <section>
+      <!--NAV TABS-->
+      <ul class="nav nav-tabs">
+  	    <li class = "active"><a data-toggle="tab" href=""><grey>.</grey><blue>blt</blue><grey>.</grey></a></li>
+        <li><a data-toggle="tab" href="details">ABOUT <grey>.</grey><blue>blt</blue><grey>.</grey></a></li>
+        <li><a data-toggle="tab" href="slides">SLIDES</a></li>
+        <li><a data-toggle="tab" href="aboutme">ABOUT JEFF</a></li>
+      </ul>
+      <!--END NAV TABS-->
+
+      <!--TITLE PANEL-->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1><center><grey>.</grey><blue>big little transport</blue><grey>.</grey><br><h4>a smart shuttle dispatcher</h4></center></h1>
+        </div>
+      </div>
+      <!--END TITLE PANEL-->
+    </section>
+    <!--END TITLE AND NAV-->
+
+    <!--BLURB AND INPUT-->
+    <section>
+      <!--BLURB-->
+      <div class="col-lg-4"style="width:100%">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h3 class="panel-title">Dispatch ride-sharing shuttles in NYC</h3>
+                  <p class="panel-sub-title font-13 text-muted">Identifying efficient pickup/dropoff pairs for shuttling ride-share passengers.</p>
+              </div>
+              <div class="panel-body">
+                <p>
+                  <grey>.</grey><blue>blt</blue><grey>.</grey> uses NYC Taxi Data to predict where to send ride-sharing shuttles
+                  in order to maximize percent occupancy and revenue. This app can be used
+                  by ride-sharing companies to competitively enter the ride-sharing market,
+                  or by individual drivers on existing platforms (e.g. uberPool) to choose
+                  where to drive to maximize revenue.
+                </p>
+              </div>
+          </div>
+      </div>
+      <!--END BLURB-->
+
+      <!--INPUT PANEL-->
+      <div class="col-lg-4" style="width:100%">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h3 class="panel-title">Enter Pickup Details</h3>
+                  <p class="panel-sub-title font-13 text-muted">Enter the pickup time and the day of the week.</p>
+              </div>
+              <div class="panel-body">
+                <form action="/output2" method="GET">
+                  <!--PICKUP TIME-->
+                  <div class="form-group"style="width:25%">
+                    <label for="start_time">Select Hour:</label>
+                    <select class="form-control" id="start_time" name = 'start_time'>
+                      <option value='00:00:00'>12:00AM</option>
+                      <option value='01:00:00'>1:00AM</option>
+                      <option value='02:00:00'>2:00AM</option>
+                      <option value='03:00:00'>3:00AM</option>
+                      <option value='04:00:00'>4:00AM</option>
+                      <option value='05:00:00'>5:00AM</option>
+                      <option value='06:00:00'>6:00AM</option>
+                      <option value='07:00:00'>7:00AM</option>
+                      <option value='08:00:00'>8:00AM</option>
+                      <option value='09:00:00'>9:00AM</option>
+                      <option value='10:00:00' selected>10:00AM</option>
+                      <option value='11:00:00'>11:00AM</option>
+                      <option value='12:00:00'>12:00PM</option>
+                      <option value='13:00:00'>1:00PM</option>
+                      <option value='14:00:00'>2:00PM</option>
+                      <option value='15:00:00'>3:00PM</option>
+                      <option value='16:00:00'>4:00PM</option>
+                      <option value='17:00:00'>5:00PM</option>
+                      <option value='18:00:00'>6:00PM</option>
+                      <option value='19:00:00'>7:00PM</option>
+                      <option value='20:00:00'>8:00PM</option>
+                      <option value='21:00:00'>9:00PM</option>
+                      <option value='22:00:00'>10:00PM</option>
+                      <option value='23:00:00'>11:00PM</option>
+                    </select>
+                  </div>
+                  <!--END PICKUP TIME-->
+                  <!--WEEKDAY-->
+                  <div class="form-group"style="width:25%">
+                    <label for="weekday">Select Day:</label>
+                    <select class="form-control" id="weekday" name="weekday">
+                      <option value=0>Sunday</option>
+                      <option value=1>Monday</option>
+                      <option value=2>Tuesday</option>
+                      <option value=3>Wednesday</option>
+                      <option value=4 selected>Thursday</option>
+                      <option value=5>Friday</option>
+                      <option value=6>Saturday</option>
+                    </select>
+                  </div>
+                  <!--END WEEKDAY-->
+                  <div>
+                    <button type="submit" class="btn btn-default btn-lg">Dispatch!</button>
+                  </div>
+                </form>
+              </div>
+          </div>
+      </div>
+      <!--END INPUT PANEL-->
+    </section>
+    <!--END BLURB AND INPUT-->
+
+    <section>
+      <!--TOP PAIR-->
+      <div class="col-lg-4" style='width:100%;'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">RESULT</h3>
+              <p class="panel-sub-title font-13 text-muted">Based on historical
+                data from <blue>{{(hour%12) if hour!=0 else 12}}{{'PM' if hour>12 else 'AM'}} on {{weekday_name}}s </blue>,
+                we suggest you drive to <blue><span id = "reverseGeocode"></span></blue>.
+                Past demand suggests about <blue>{{'%d' %passenger_count_top_pair}} passengers</blue> at this location,
+                typically served by about {{'%d' %ride_count_top_pair}} taxis, but you can use just
+                <blue>{{'%d' %((passenger_count_top_pair/11)+ (1 if passenger_count_top_pair%11!=0 else 0))}}
+                shuttle van{{'s' if passenger_count_top_pair>11 else ''}}</blue> (11 person occupancy).
+                You will likely dropoff at <blue><span id = "reverseGeocodeDropoff"></span></blue>. We
+                expect about <blue>${{'%d' %revenue_top_pair}} USD</blue> in fares. The estimated
+                ride time is <blue>{{'%d' %driving_time}} minutes</blue>, compared to public transit
+                time of {{'%d' %transit_time}} minutes.</p>
+          </div>
+          <div class="panel-body">
+            <div class="col-lg-4" style="width:100%;height:500px;">
+              <div id="map5"></div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!--END TOP PAIR-->
+
+      <!--PICKUP HEATMAP-->
+      <div class="col-lg-4" style='width:100%;'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">Pickup Heatmap</h3>
+              <p class="panel-sub-title font-13 text-muted">This is a heat map
+                of all pickups around {{(hour%12) if hour!=0 else 12}}{{'PM' if hour>12 else 'AM'}} on {{weekday_name}}s. This is based on data
+                from January to June, 2016 of NYC Taxi and Limousine Commission Yellow cabs.</p>
+          </div>
+          <div class="panel-body">
+            <div class="col-lg-4" style="width:100%;height:500px;">
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--END PICKUP HEATMAP-->
+
+      <!--DROPOFF HEATMAP-->
+      <div class="col-lg-4" style='width:100%;'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">Dropoff Heatmap</h3>
+              <p class="panel-sub-title font-13 text-muted">This is a heat map
+                of all dropoffs around {{(hour%12) if hour!=0 else 12}}{{'PM' if hour>12 else 'AM'}} on {{weekday_name}}s.</p>
+          </div>
+          <div class="panel-body">
+            <div class="col-lg-4" style="width:100%;height:500px;">
+              <div id="map2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--END DROPOFF HEATMAP-->
+
+      <!--TOP PICKUP CLUSTER-->
+      <div class="col-lg-4" style='width:100%;'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">Top Pickup Clusters</h3>
+              <p class="panel-sub-title font-13 text-muted">
+                This is a heat map of the top five pickup locations around {{(hour%12) if hour!=0 else 12}}{{'PM' if hour>12 else 'AM'}} on {{weekday_name}}s.</p>
+          </div>
+          <div class="panel-body">
+            <div class="col-lg-4" style="width:100%;height:500px;">
+              <div id="map3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--END TOP PICKUP CLUSTER-->
+
+      <!--TOP DROPOFF CLUSTER-->
+      <div class="col-lg-4" style='width:100%;'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">Top Dropoff Clusters</h3>
+              <p class="panel-sub-title font-13 text-muted">
+                This is a heat map of the top five dropoff locations around {{(hour%12) if hour!=0 else 12}}{{'PM' if hour>12 else 'AM'}} on {{weekday_name}}s.</p>
+          </div>
+          <div class="panel-body">
+            <div class="col-lg-4" style="width:100%;height:500px;">
+              <div id="map4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--END TOP DROPOFF CLUSTER-->
+    </section>
+
+    <script>
+      // This example requires the Visualization library. Include the libraries=visualization
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
+      var map, heatmap, heatmap_dropoff;
+      var styles = [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]
+
+      //40.738309, -73.903764
+      //40.734590, -73.883336
+      var ny ={lat: 40.7831,lng: -73.9712};
+      ny = {lat:40.734590, lng:-73.883336};
+      var zoom_level = 10;
+      var pickup_latitude = [];
+      var pickup_longitude = [];
+      var dropoff_latitude = [];
+      var dropoff_longitude = [];
+      var pickup_latitude_top5 = [];
+      var pickup_longitude_top5 = [];
+      var dropoff_latitude_top5 = [];
+      var dropoff_longitude_top5 = [];
+      var pickup_latitude_best = [];
+      var pickup_longitude_best = [];
+      var dropoff_latitude_best = [];
+      var dropoff_longitude_best = [];
+
+      var i = 0;
+      {% for pickup in pickups%}
+        pickup_latitude[i] = {{pickup['pickup_latitude']}};
+        pickup_longitude[i] = {{pickup['pickup_longitude']}};
+        i++;
+      {% endfor %}
+
+      var i = 0;
+      {% for dropoff in dropoffs%}
+        dropoff_latitude[i] = {{dropoff['dropoff_latitude']}};
+        dropoff_longitude[i] = {{dropoff['dropoff_longitude']}};
+        i++;
+      {% endfor %}
+
+      var i = 0;
+      {% for pickup in pickups_top5%}
+        pickup_latitude_top5[i] = {{pickup['pickup_latitude']}};
+        pickup_longitude_top5[i] = {{pickup['pickup_longitude']}};
+        i++;
+      {% endfor %}
+
+      var i = 0;
+      {% for dropoff in dropoffs_top5%}
+        dropoff_latitude_top5[i] = {{dropoff['dropoff_latitude']}};
+        dropoff_longitude_top5[i] = {{dropoff['dropoff_longitude']}};
+        i++;
+      {% endfor %}
+
+      var i = 0;
+      {% for ride in top_pair%}
+        pickup_latitude_best[i] = {{ride['pickup_latitude']}};
+        pickup_longitude_best[i] = {{ride['pickup_longitude']}};
+        dropoff_latitude_best[i] = {{ride['dropoff_latitude']}};
+        dropoff_longitude_best[i] = {{ride['dropoff_longitude']}};
+        i++;
+      {% endfor %}
+
+
+      var gradient = [
+        'rgba(0, 255, 255, 0)',
+        'rgba(0, 255, 255, 1)',
+        'rgba(0, 191, 255, 1)',
+        'rgba(0, 127, 255, 1)',
+        'rgba(0, 63, 255, 1)',
+        'rgba(0, 0, 255, 1)',
+        'rgba(0, 0, 223, 1)',
+        'rgba(0, 0, 191, 1)',
+        'rgba(0, 0, 159, 1)',
+        'rgba(0, 0, 127, 1)',
+        'rgba(63, 0, 91, 1)',
+        'rgba(127, 0, 63, 1)',
+        'rgba(191, 0, 31, 1)',
+        'rgba(255, 0, 0, 1)'
+      ]
+
+      function initMap() {
+
+        var pickup_cluster_center = {lat: pickup_latitude_best[0], lng: pickup_longitude_best[0]}
+        var dropoff_cluster_center = {lat: dropoff_latitude_best[0], lng: dropoff_longitude_best[0]}
+
+        //pickup heatmap - map
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: zoom_level,
+          center: ny,
+          mapTypeId: 'roadmap',
+          scrollwheel: false
+        });
+        map.set('styles', styles);
+
+        heatmap = new google.maps.visualization.HeatmapLayer({
+          data: getPoints(),
+          map: map
+        });
+
+        //dropoff heatmap - map2
+        map2 = new google.maps.Map(document.getElementById('map2'), {
+          zoom: zoom_level,
+          center: ny,
+          mapTypeId: 'roadmap',
+          scrollwheel: false
+        });
+        map2.set('styles', styles);
+
+        heatmap2 = new google.maps.visualization.HeatmapLayer({
+          data: getDropoffPoints(),
+          map: map2,
+          gradient: gradient,
+          scrollwheel: false
+        });
+
+        //pickup top 5 clusters - map3
+        map3 = new google.maps.Map(document.getElementById('map3'), {
+          zoom: zoom_level,
+          center: ny,
+          mapTypeId: 'roadmap',
+          scrollwheel: false
+        });
+        map3.set('styles', styles);
+        heatmap3 = new google.maps.visualization.HeatmapLayer({
+          data: getLatLongArray(pickup_latitude_top5,pickup_longitude_top5),
+          map: map3
+        });
+
+        //dropoff top 5 clusters - map3
+        map4 = new google.maps.Map(document.getElementById('map4'), {
+          zoom: zoom_level,
+          center: ny,
+          mapTypeId: 'roadmap',
+          scrollwheel: false
+        });
+        map4.set('styles', styles);
+        heatmap4 = new google.maps.visualization.HeatmapLayer({
+          data: getLatLongArray(dropoff_latitude_top5,dropoff_longitude_top5),
+          map: map4,
+          gradient: gradient
+        });
+
+        //top pair - pickup to dropoff map
+        map5 = new google.maps.Map(document.getElementById('map5'), {
+          zoom: zoom_level,
+          center: ny,
+          mapTypeId: 'roadmap',
+          scrollwheel: false
+        });
+        map5.set('styles', styles);
+        heatmap5 = new google.maps.visualization.HeatmapLayer({
+          data: getLatLongArray(pickup_latitude_best,pickup_longitude_best),
+          map: map5
+        });
+        heatmap6 = new google.maps.visualization.HeatmapLayer({
+          data: getLatLongArray(dropoff_latitude_best,dropoff_longitude_best),
+          map: map5,
+          gradient: gradient
+        });
+
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsDisplay.setMap(map5);
+
+        directionsService.route({
+          origin: pickup_cluster_center,
+          destination: dropoff_cluster_center,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+
+        var geocoder = new google.maps.Geocoder;
+        geocodeLatLng(geocoder, pickup_cluster_center);
+        geocodeLatLng2(geocoder, dropoff_cluster_center);
+      }
+
+      function toggleHeatmap() {
+        heatmap.setMap(heatmap.getMap() ? null : map);
+      }
+
+      function toggleHeatmap2() {
+        heatmap_dropoff.setMap(heatmap_dropoff.getMap() ? null : map);
+      }
+
+      function changeRadius() {
+        heatmap.set('radius', heatmap.get('radius') ? null : 20);
+        heatmap_dropoff.set('radius', heatmap_dropoff.get('radius') ? null : 20);
+      }
+
+      function changeOpacity() {
+        heatmap.set('opacity', heatmap.get('opacity') ? null : 0.5);
+        heatmap_dropoff.set('opacity', heatmap_dropoff.get('opacity') ? null : 0.5);
+      }
+
+      function getLatLongObject(lat,lng){
+          return new google.maps.LatLng(lat,lng);
+      }
+
+      function getLatLongArray(lat_arr,lng_arr){
+        var N = lat_arr.length;
+        var latLngArray = [];
+        for(i=0; i<N; i++){
+          latLngArray[i] = getLatLongObject(lat_arr[i],lng_arr[i]);
+        }
+        return latLngArray;
+      }
+
+      function getPoints() {
+        return getLatLongArray(pickup_latitude,pickup_longitude);
+      }
+
+      function getDropoffPoints() {
+        return getLatLongArray(dropoff_latitude,dropoff_longitude);
+      }
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        directionsService.route({
+          origin: document.getElementById('start').value,
+          destination: document.getElementById('end').value,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+      function geocodeLatLng(geocoder, latlng) {
+        geocoder.geocode({'location': latlng}, function(results, status) {
+          if (status === 'OK') {
+            if (results[0]) {
+              $('#reverseGeocode').html(results[0].formatted_address);
+            } else {
+              alert('No results found');
+            }
+            } else {
+              alert('Geocoder failed due to: ' + status);
+            }
+        });
+      }
+
+      function geocodeLatLng2(geocoder, latlng) {
+        geocoder.geocode({'location': latlng}, function(results, status) {
+          if (status === 'OK') {
+            if (results[0]) {
+              $('#reverseGeocodeDropoff').html(results[0].formatted_address);
+            } else {
+              alert('No results found');
+            }
+            } else {
+              alert('Geocoder failed due to: ' + status);
+            }
+        });
+      }
+
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPmpvI8JXVxgz99HXIcssM6c2oioACfQk&libraries=visualization&callback=initMap">
+    </script>
+  </body>
+</html>
