@@ -220,7 +220,7 @@ We're going to use the Google Maps API to compute estimates of our public transi
 ```python
 import googlemaps
 from datetime import datetime
-gmaps_api = googlemaps.Client(key='AIzaSyCPmpvI8JXVxgz99HXIcssM6c2oioACfQk')
+gmaps_api = googlemaps.Client(key='YOUR_API_KEY')
 ```
 
 Now, we can compute the durations for public transit and driving. And rather than import them, I show the functions here, which will return the estimated time (in seconds), between public transit and driving times. Here, I'm just using the current time (`datetime.now()`), but you could substitute whatever time is relevant to the service you'd like to offer.
